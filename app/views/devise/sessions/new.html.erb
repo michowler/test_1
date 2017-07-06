@@ -8,7 +8,9 @@
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off" %><br/>
+    <%= link_to "Forgot Password?", reset_password_url(resource_name) %>
+
   </div>
 
   <% if devise_mapping.rememberable? -%>

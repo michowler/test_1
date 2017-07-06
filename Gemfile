@@ -39,6 +39,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 #framework for style
 gem 'bootstrap-sass'
+#javascript code using turbolinks 
+gem 'jquery-turbolinks'
+#open in browser instead of sending email
+gem "letter_opener", :group => :development
+# background job for emails
+gem 'delayed_job_active_record'
+# devise plugin to reject weak passwords
+#gem 'devise_zxcvbn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
