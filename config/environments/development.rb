@@ -26,10 +26,32 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_mailer.default_url_options = { host: 'imingle.herokuapp.com' }
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_caching = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'http://localhost:3000',
+    user_name:            ENV['gmail_username'],
+    password:             ENV['gmail_password'],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # deliver mails using letter opener gem
+  config.action_mailer.delivery_method = :letter_opener
+
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.perform_deliveries = true
   
   #Lastly, configure the default URL options for development:
   config.action_mailer.default_url_options = { host: '127.0.0.1', port: 3000 }
