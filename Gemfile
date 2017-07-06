@@ -39,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 #framework for style
 gem 'bootstrap-sass'
+#javascript code using turbolinks 
+gem 'jquery-turbolinks'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
