@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#index'
 
+  resources "contacts", only: [:new, :create]
+  get '/contacts' => 'contacts#new'
+
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   devise_scope :user do
