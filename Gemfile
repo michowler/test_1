@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-
+#forms
 gem 'simple_form'
 gem 'mail_form'
 #user auth
@@ -46,6 +46,8 @@ gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 #open in browser instead of sending email
 gem "letter_opener", :group => :development
+#for API request
+gem 'httparty'
 # background job for emails
 gem 'delayed_job_active_record'
 # devise plugin to reject weak passwords
