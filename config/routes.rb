@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get '/profile/:id', to: 'users#show'
+  resources :conversations, only: [:create]
+
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end
+  
   root to: 'pages#index'
 
   resources "contacts", only: [:new, :create]

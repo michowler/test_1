@@ -18,7 +18,7 @@ end
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -35,13 +35,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'jquery-rails'
 #forms
 gem 'simple_form'
 gem 'mail_form'
 #user auth
 gem 'devise'
 #framework for style
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 #javascript code using turbolinks 
 gem 'jquery-turbolinks'
 #open in browser instead of sending email
