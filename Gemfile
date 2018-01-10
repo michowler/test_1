@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 
@@ -14,7 +13,6 @@ group :production do
   gem 'pg'
 end  
 
-# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -32,11 +30,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 gem 'jquery-rails'
-#forms
+#gems for stylish email forms
 gem 'simple_form'
 gem 'mail_form'
 #user auth
@@ -52,7 +47,13 @@ gem 'httparty'
 # background job for emails
 gem 'delayed_job_active_record'
 # devise plugin to reject weak passwords
-#gem 'devise_zxcvbn'
+gem 'devise_zxcvbn'
+#uploading images
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog'
+#security
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -63,6 +64,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'nokogiri', '>= 1.8.1'
 end
 
 group :development do

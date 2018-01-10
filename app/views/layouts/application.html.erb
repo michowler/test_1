@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test1</title>
+    <title>R-A-D</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
 
   	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   		<div class="container">
-  		  <%= link_to 'Test 1', root_path, class: 'navbar-brand' %>
+  		  <%= link_to 'R-A-D', root_path, class: 'navbar-brand' %>
   		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
   		  </button>
@@ -20,6 +20,9 @@
     		<ul class="navbar-nav ml-auto">
 			<% if user_signed_in? %>
          	  <li class="nav-item dropdown">
+            <% if current_user.avatar? %>
+               <%= image_tag current_user.avatar.url(:thumb), :class => "img-responsive img-circle" %>
+            <%end%>  
         		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.name %></a>
         		  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           			<%= link_to 'Settings', edit_user_registration_path, :class => 'dropdown-item' %>
