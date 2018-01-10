@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get '/profile/:id', to: 'users#show'
+  
+  root to: 'pages#index'
+  #get '/profile/:id', to: 'users#show'
+
+  #for chat function
   resources :conversations, only: [:create]
 
   resources :conversations, only: [:create] do
@@ -7,15 +11,16 @@ Rails.application.routes.draw do
       post :close
     end
     resources :messages, only: [:create]
-  end
-  
-  root to: 'pages#index'
+  end  
 
+  #for contact us page
   resources "contacts", only: [:new, :create]
   get '/contacts' => 'contacts#new'
 
+  #registration
   devise_for :users, :controllers => {:registrations => "registrations"}
 
+  #user authentication and forgot password
   devise_scope :user do
   get '/reset_password' => "passwords#new", :as => :reset_password
   get '/new_password' => "passwords#edit", :as => :new_password
